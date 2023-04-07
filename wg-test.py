@@ -26,9 +26,11 @@ while True:
         # Parse the output to check the ping status
         if "1 received" in result.stdout:
             channel.basic_publish(exchange='', routing_key='9652c9a480a8eth0', body=json.dumps({"connected":True}))
+            # print(result)
             print(f"{client}: ping OK")
         else:
             channel.basic_publish(exchange='', routing_key='9652c9a480a8eth0', body=json.dumps({"connected":False}))
+            # print(result)
             print(f"{client}: ping failed")
 
     # Wait for some time before pinging the clients again

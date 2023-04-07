@@ -6,34 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .badge{
-            width: 10px;
-            height: 10px;
-            background-color: rgb(255, 0, 0);
-            display: inline-block;
-            border-radius: 50%;
-            margin: 0 5px;
-        }
-        .success{
-            background-color: green;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div>welcome to the Wg0 service Monitoring</div>
     <div>wg0 connection status:<span id="badge" class="badge"></span></div>
-    <p>
-        <span>Rx:</span>
-        <span id="rx"></span>
-    </p>
-    <p>
-        <span>Tx:</span>
-        <span id="tx"></span>
-    </p>
+    <div id="cpu"></div>
+    <div id="Memory_Usage"></div>
+    <div id="Memory_Percentage"></div>
+    <div id="Net_I"></div>
+    <div id="Block_I"></div>
+    <div id="PID"></div>
+    <!-- <div id="info">Description</div> -->
     <script src="stopm.js"> </script>
     <script src="mqconnect.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="chart.js"></script>
 </body>
 
 </html>

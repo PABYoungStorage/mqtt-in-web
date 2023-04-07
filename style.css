@@ -1,0 +1,25 @@
+.badge {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(255, 0, 0);
+  display: inline-block;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.success {
+  background-color: green;
+}
+#container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  #info {
+	position: absolute;
+	top: 10px;
+	width: 100%;
+	text-align: center;
+	z-index: 100;
+	display:block;
+}

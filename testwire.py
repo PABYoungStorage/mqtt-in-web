@@ -12,15 +12,15 @@ connection = pika.BlockingConnection(
                               credentials))
 channel = connection.channel()
 
-channel.queue_declare(queue='9652c9a480a8eth0',durable=True)
+channel.queue_declare(queue='testwire')
 
 while True:
-    tx = "ifconfig | grep -B 0 -A 5 wg0 | grep 'RX packets' | awk '{print $6 ,$7}'  "
+    tx = "docker stats --no-stream | grep traefik_anish_1 | awk '{print "'"cpu "'" $3} {print "'"Memory_Usage "'" $4 $5 $6} {print "'"Memory_Percentage "'" $7} {print "'"Net_I/O "'" $8 $9 $10} {print "'"Block_I/O "'" $11 $12 $13} {print "'"PID "'" $14}'"
     sent = subprocess.run(tx,shell=True,capture_output=True,encoding="utf-8")
     sent2 = sent.stdout
 
     time.sleep(2)
 
-    channel.basic_publish(exchange='', routing_key='9652c9a480a8eth0', body=json.dumps({"rx":sent2}))
+    channel.basic_publish(exchange='', routing_key='testwire', body=json.dumps({"rx":sent2}))
     print(sent2)
 connection.close()
